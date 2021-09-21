@@ -1,5 +1,5 @@
 <template>
-  
+  <p>Página de inicio de búsqueda</p>
 </template>
 
 <script>

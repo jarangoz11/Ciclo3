@@ -1,47 +1,50 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-      
-    >
-      <div class="d-flex align-center">
-        <v-img
-          class="shrink mr-2"
-          contain
-          transition="scale-transition"
-          width="40"
-        />
 
+
+  <v-app id="inspire">
+
+    <encabezado :title="title" :drawer="drawer" />
+    <v-navigation-drawer v-model="drawer" app>
+      <Menu :title="title" :isAdmin="true" />
+    </v-navigation-drawer>
+
+    
         
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Vitrina Agrícola</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <router-view/>
-    </v-main>
+    <v-footer app>
+      <Footer />
+    </v-footer>    
   </v-app>
 </template>
 
 <script>
 
+
+import Encabezado from "./components/Encabezado.vue"
+import Footer from "./components/Footer.vue"
+import Menu from "./components/Menu.vue"
+
+
+
 export default {
   name: 'App',
 
-  data: () => ({
-    //
-  }),
+  components: {
+    Encabezado,
+    Menu,  
+    Footer,
+  },
+
+    
+   data() {
+    return {      
+      title: "Vitrina Agrícola",
+      drawer: true,
+    };
+  },
+  watch: {
+    drawer(value) {
+      return value;
+    },
+  },
 };
 </script>
