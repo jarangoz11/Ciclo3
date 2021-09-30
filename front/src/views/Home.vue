@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <h1>This is an home page</h1>
+    <h1>Página inicial </h1>
+    <h3>Proyecto de prueba de integración de Back y Front, Grupo 18</h3>
     <v-list>
       <v-subheader>REPORTS</v-subheader>
       <v-list-item-group v-model="selectedItem" color="primary">
